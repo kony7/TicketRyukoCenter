@@ -16,6 +16,8 @@
 		EE95B0EE27D4D550003478B3 /* TicketRyukoCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B0ED27D4D550003478B3 /* TicketRyukoCenterTests.swift */; };
 		EE95B0F827D4D550003478B3 /* TicketRyukoCenterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B0F727D4D550003478B3 /* TicketRyukoCenterUITests.swift */; };
 		EE95B0FA27D4D550003478B3 /* TicketRyukoCenterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B0F927D4D550003478B3 /* TicketRyukoCenterUITestsLaunchTests.swift */; };
+		EE95B10727D5E7E9003478B3 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B10627D5E7E9003478B3 /* SendViewController.swift */; };
+		EE95B10927D5E817003478B3 /* MakeTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B10827D5E817003478B3 /* MakeTicketViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		EE95B0F327D4D550003478B3 /* TicketRyukoCenterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicketRyukoCenterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE95B0F727D4D550003478B3 /* TicketRyukoCenterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRyukoCenterUITests.swift; sourceTree = "<group>"; };
 		EE95B0F927D4D550003478B3 /* TicketRyukoCenterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRyukoCenterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EE95B10627D5E7E9003478B3 /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
+		EE95B10827D5E817003478B3 /* MakeTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTicketViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				EE95B0D627D4D54D003478B3 /* AppDelegate.swift */,
 				EE95B0D827D4D54D003478B3 /* SceneDelegate.swift */,
 				EE95B0DA27D4D54D003478B3 /* ViewController.swift */,
+				EE95B10827D5E817003478B3 /* MakeTicketViewController.swift */,
+				EE95B10627D5E7E9003478B3 /* SendViewController.swift */,
 				EE95B0DC27D4D54D003478B3 /* Main.storyboard */,
 				EE95B0DF27D4D54F003478B3 /* Assets.xcassets */,
 				EE95B0E127D4D54F003478B3 /* LaunchScreen.storyboard */,
@@ -258,8 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE95B10727D5E7E9003478B3 /* SendViewController.swift in Sources */,
 				EE95B0DB27D4D54D003478B3 /* ViewController.swift in Sources */,
 				EE95B0D727D4D54D003478B3 /* AppDelegate.swift in Sources */,
+				EE95B10927D5E817003478B3 /* MakeTicketViewController.swift in Sources */,
 				EE95B0D927D4D54D003478B3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
