@@ -8,10 +8,30 @@
 import UIKit
 
 class SendViewController: UIViewController {
+    
+    @IBOutlet var titleLabel:UILabel!
+    @IBOutlet var senderLabel:UILabel!
+    @IBOutlet var comentLabel:UILabel!
+    @IBOutlet var limitdayLabel:UILabel!
+    
+    @IBOutlet var idTextField:UITextField!
+    
+    @IBOutlet var sendButton:UIButton!
+    
+    var titleText:String = ""
+    var senderText:String = ""
+    var comentText:String = ""
+    var limitDate:Date = Date()
+    var design:Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        titleLabel.text = titleText
+        senderLabel.text = senderText
+        comentLabel.text = comentText
+       // limitdayLabel.text = String(limitDate)
+        
         // Do any additional setup after loading the view.
     }
     

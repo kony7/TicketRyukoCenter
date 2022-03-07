@@ -130,7 +130,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qg3-F4-ft5">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="qg3-F4-ft5">
                                 <rect key="frame" x="30" y="373.5" width="354" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="SLf-n3-aW8"/>
@@ -200,7 +200,7 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="17"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="c90-vm-pjK" kind="show" id="ttR-D3-taI"/>
+                                    <segue destination="c90-vm-pjK" kind="show" identifier="toSendViewController" id="ttR-D3-taI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -237,6 +237,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="発券" id="bkS-NE-2wC"/>
+                    <connections>
+                        <outlet property="comentTextField" destination="noE-uy-JZF" id="I8l-H7-xkI"/>
+                        <outlet property="designCard1" destination="D2f-2C-2vz" id="tkP-yD-3Qd"/>
+                        <outlet property="designCard2" destination="sQX-63-lPb" id="997-F8-goV"/>
+                        <outlet property="designCard3" destination="sNt-Ag-hOk" id="oZn-8x-y0v"/>
+                        <outlet property="designCard4" destination="XZV-NP-p8F" id="ufj-4V-12n"/>
+                        <outlet property="limitDatePicker" destination="hrN-IH-XFa" id="e9i-1n-RuG"/>
+                        <outlet property="senderTextField" destination="3vp-vP-EPK" id="EiH-g0-Kkb"/>
+                        <outlet property="titleTextField" destination="qg3-F4-ft5" id="Ywf-V5-7h9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bV-lM-VxM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -337,6 +347,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="贈る" id="P8h-a7-DV0"/>
+                    <connections>
+                        <outlet property="comentLabel" destination="Qm4-R8-TOn" id="cu4-VH-Pmx"/>
+                        <outlet property="idTextField" destination="TOx-eE-Mok" id="fVy-j7-kgx"/>
+                        <outlet property="limitdayLabel" destination="w4b-4E-ncq" id="agE-o8-33a"/>
+                        <outlet property="sendButton" destination="cb5-ax-JWl" id="XKH-eC-kgB"/>
+                        <outlet property="senderLabel" destination="TFT-D8-Rqq" id="qWY-RP-aWa"/>
+                        <outlet property="titleLabel" destination="d0d-JH-VrS" id="yQI-or-mCH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6s-Ak-HZk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
