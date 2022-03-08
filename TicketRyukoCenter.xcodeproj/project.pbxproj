@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE91796D27D7BBD80036525B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EE91796C27D7BBD80036525B /* FirebaseFirestore */; };
 		EE95B0D727D4D54D003478B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B0D627D4D54D003478B3 /* AppDelegate.swift */; };
 		EE95B0D927D4D54D003478B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B0D827D4D54D003478B3 /* SceneDelegate.swift */; };
 		EE95B0DB27D4D54D003478B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B0DA27D4D54D003478B3 /* ViewController.swift */; };
@@ -70,6 +71,7 @@
 			files = (
 				EE95B11027D7560B003478B3 /* RealmSwift in Frameworks */,
 				EE95B10E27D7560B003478B3 /* Realm in Frameworks */,
+				EE91796D27D7BBD80036525B /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +166,7 @@
 			packageProductDependencies = (
 				EE95B10D27D7560B003478B3 /* Realm */,
 				EE95B10F27D7560B003478B3 /* RealmSwift */,
+				EE91796C27D7BBD80036525B /* FirebaseFirestore */,
 			);
 			productName = TicketRyukoCenter;
 			productReference = EE95B0D327D4D54D003478B3 /* TicketRyukoCenter.app */;
@@ -239,7 +242,7 @@
 			mainGroup = EE95B0CA27D4D54D003478B3;
 			packageReferences = (
 				EE95B10C27D7560A003478B3 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
-				EE95B11127D7B0B7003478B3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				EE91796B27D7BBD80036525B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = EE95B0D427D4D54D003478B3 /* Products */;
 			projectDirPath = "";
@@ -479,6 +482,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -507,6 +511,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,6 +643,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EE91796B27D7BBD80036525B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		EE95B10C27D7560A003478B3 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa";
@@ -646,17 +659,14 @@
 				kind = branch;
 			};
 		};
-		EE95B11127D7B0B7003478B3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EE91796C27D7BBD80036525B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE91796B27D7BBD80036525B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		EE95B10D27D7560B003478B3 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EE95B10C27D7560A003478B3 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
