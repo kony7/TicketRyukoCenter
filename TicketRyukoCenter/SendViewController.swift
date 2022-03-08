@@ -16,6 +16,8 @@ class SendViewController: UIViewController {
     
     @IBOutlet var idTextField:UITextField!
     
+    @IBOutlet var cardImageView:UIImageView!
+    
     @IBOutlet var sendButton:UIButton!
     
     var titleText:String = ""
@@ -26,6 +28,20 @@ class SendViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        switch design{
+        case 1:
+            cardImageView.image = UIImage(named: "TicketCardPink")
+        case 2:
+            cardImageView.image = UIImage(named: "TicketCardOrange")
+        case 3:
+            cardImageView.image = UIImage(named: "TicketCardGreen")
+        case 4:
+            cardImageView.image = UIImage(named: "TicketCardBlue")
+        default:
+            return
+            
+        }
         
         titleLabel.text = titleText
         senderLabel.text = senderText

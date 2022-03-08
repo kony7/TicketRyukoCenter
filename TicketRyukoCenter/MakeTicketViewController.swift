@@ -20,6 +20,8 @@ class MakeTicketViewController: UIViewController {
     
     @IBOutlet var limitDatePicker: UIDatePicker!
     
+    var cardSelecte:Int = 0
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,22 @@ class MakeTicketViewController: UIViewController {
         comentTextField.setUnderLine()
         
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func pinkButton(){
+        cardSelecte = 1
+    }
+    
+    @IBAction func orangeButton(){
+        cardSelecte = 2
+    }
+    
+    @IBAction func greenButton(){
+        cardSelecte = 3
+    }
+    
+    @IBAction func blueButton(){
+        cardSelecte = 4
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,6 +60,7 @@ class MakeTicketViewController: UIViewController {
              next?.senderText = self.senderTextField.text!
              next?.comentText = self.comentTextField.text!
              next?.limitDate = self.limitDatePicker.date
+             next?.design = self.cardSelecte
              
          }
      }

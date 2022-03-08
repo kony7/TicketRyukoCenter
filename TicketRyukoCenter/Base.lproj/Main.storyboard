@@ -76,6 +76,9 @@
                                                         <buttonConfiguration key="configuration" style="plain">
                                                             <backgroundConfiguration key="background" image="TicketCardPink"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="pinkButton" destination="rYA-CQ-3Ms" eventType="touchUpInside" id="bRj-bl-k47"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQX-63-lPb">
                                                         <rect key="frame" x="300.5" y="0.0" width="280.5" height="180"/>
@@ -84,6 +87,9 @@
                                                         <buttonConfiguration key="configuration" style="plain">
                                                             <backgroundConfiguration key="background" image="TicketCardOrange"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="orangeButton" destination="rYA-CQ-3Ms" eventType="touchUpInside" id="lyb-eR-sR4"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNt-Ag-hOk">
                                                         <rect key="frame" x="601" y="0.0" width="280.5" height="180"/>
@@ -92,6 +98,9 @@
                                                         <buttonConfiguration key="configuration" style="plain">
                                                             <backgroundConfiguration key="background" image="TicketCardBlue"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="blueButton" destination="rYA-CQ-3Ms" eventType="touchUpInside" id="Mtf-vq-01w"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZV-NP-p8F">
                                                         <rect key="frame" x="901.5" y="0.0" width="280.5" height="180"/>
@@ -100,6 +109,9 @@
                                                         <buttonConfiguration key="configuration" style="plain">
                                                             <backgroundConfiguration key="background" image="TicketCardGreen"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="greenButton" destination="rYA-CQ-3Ms" eventType="touchUpInside" id="BJj-Rd-LuC"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -351,6 +363,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="贈る" id="P8h-a7-DV0"/>
                     <connections>
+                        <outlet property="cardImageView" destination="5O5-tV-MMi" id="j71-rr-HgU"/>
                         <outlet property="comentLabel" destination="Qm4-R8-TOn" id="cu4-VH-Pmx"/>
                         <outlet property="idTextField" destination="TOx-eE-Mok" id="fVy-j7-kgx"/>
                         <outlet property="limitdayLabel" destination="w4b-4E-ncq" id="agE-o8-33a"/>
