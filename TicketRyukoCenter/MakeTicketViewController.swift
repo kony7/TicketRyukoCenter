@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Firebase
 
 class MakeTicketViewController: UIViewController {
+    
+    let firestore = Firestore.firestore()
     
     @IBOutlet var designCard1: UIButton!
     @IBOutlet var designCard2: UIButton!
@@ -67,6 +70,12 @@ class MakeTicketViewController: UIViewController {
 
      @IBAction func tapTransitionButton(_ sender: Any) {
          // 4. 画面遷移実行
+         firestore.collection("cards").document("cardInfo").setData(["cardTitle": titleTextField.text!])
+         firestore.collection("cards").document("cardInfo").setData(["cardSender": senderTextField.text!])
+         firestore.collection("cards").document("cardInfo").setData(["cardComent": comentTextField.text!])
+         firestore.collection("cards").document("cardInfo").setData(["cardLimit": limitDatePicker.date])
+         firestore.collection("cards").document("cardInfo").setData(["cardDesign": cardSelecte])
+         
          performSegue(withIdentifier: "toSendViewController", sender: nil)
      }
 
