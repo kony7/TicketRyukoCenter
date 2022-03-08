@@ -18,6 +18,9 @@
 		EE95B0FA27D4D550003478B3 /* TicketRyukoCenterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B0F927D4D550003478B3 /* TicketRyukoCenterUITestsLaunchTests.swift */; };
 		EE95B10727D5E7E9003478B3 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B10627D5E7E9003478B3 /* SendViewController.swift */; };
 		EE95B10927D5E817003478B3 /* MakeTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B10827D5E817003478B3 /* MakeTicketViewController.swift */; };
+		EE95B10B27D7559D003478B3 /* RecaiveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B10A27D7559D003478B3 /* RecaiveCard.swift */; };
+		EE95B10E27D7560B003478B3 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = EE95B10D27D7560B003478B3 /* Realm */; };
+		EE95B11027D7560B003478B3 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EE95B10F27D7560B003478B3 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,7 @@
 		EE95B0F927D4D550003478B3 /* TicketRyukoCenterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRyukoCenterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EE95B10627D5E7E9003478B3 /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		EE95B10827D5E817003478B3 /* MakeTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTicketViewController.swift; sourceTree = "<group>"; };
+		EE95B10A27D7559D003478B3 /* RecaiveCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecaiveCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE95B11027D7560B003478B3 /* RealmSwift in Frameworks */,
+				EE95B10E27D7560B003478B3 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +114,7 @@
 				EE95B0DA27D4D54D003478B3 /* ViewController.swift */,
 				EE95B10827D5E817003478B3 /* MakeTicketViewController.swift */,
 				EE95B10627D5E7E9003478B3 /* SendViewController.swift */,
+				EE95B10A27D7559D003478B3 /* RecaiveCard.swift */,
 				EE95B0DC27D4D54D003478B3 /* Main.storyboard */,
 				EE95B0DF27D4D54F003478B3 /* Assets.xcassets */,
 				EE95B0E127D4D54F003478B3 /* LaunchScreen.storyboard */,
@@ -149,6 +156,10 @@
 			dependencies = (
 			);
 			name = TicketRyukoCenter;
+			packageProductDependencies = (
+				EE95B10D27D7560B003478B3 /* Realm */,
+				EE95B10F27D7560B003478B3 /* RealmSwift */,
+			);
 			productName = TicketRyukoCenter;
 			productReference = EE95B0D327D4D54D003478B3 /* TicketRyukoCenter.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +232,9 @@
 				Base,
 			);
 			mainGroup = EE95B0CA27D4D54D003478B3;
+			packageReferences = (
+				EE95B10C27D7560A003478B3 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = EE95B0D427D4D54D003478B3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -267,6 +281,7 @@
 				EE95B10727D5E7E9003478B3 /* SendViewController.swift in Sources */,
 				EE95B0DB27D4D54D003478B3 /* ViewController.swift in Sources */,
 				EE95B0D727D4D54D003478B3 /* AppDelegate.swift in Sources */,
+				EE95B10B27D7559D003478B3 /* RecaiveCard.swift in Sources */,
 				EE95B10927D5E817003478B3 /* MakeTicketViewController.swift in Sources */,
 				EE95B0D927D4D54D003478B3 /* SceneDelegate.swift in Sources */,
 			);
@@ -612,6 +627,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE95B10C27D7560A003478B3 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE95B10D27D7560B003478B3 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE95B10C27D7560A003478B3 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		EE95B10F27D7560B003478B3 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE95B10C27D7560A003478B3 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EE95B0CB27D4D54D003478B3 /* Project object */;
 }

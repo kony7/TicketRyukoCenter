@@ -6,10 +6,22 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    let realm = try! Realm()
+
     @IBOutlet var table: UITableView!
+    
+    @IBOutlet var titleCellText: UILabel!
+    @IBOutlet var senderCellText: UILabel!
+    @IBOutlet var limitCellText: UILabel!
+    @IBOutlet var comentCellText: UILabel!
+    
+    var cardDesign: Int = 0
+    
+    var cardsList: Results<RecaiveCard>!
     
     var titleArray = [String]()
 
@@ -19,19 +31,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         table.dataSource = self
         table.delegate = self
+        
+       // let recaiveCard: RecaiveCard? = read()
+        
+        self.cardsList = realm.objects(RecaiveCard.self)
     
        // titleArray = []
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if titleArray.count == 0{
+        if cardsList.count == 0{
             
             return 1
             
         }else{
             
-        return titleArray.count
+        return cardsList.count
             
         }
     }
@@ -46,13 +62,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell?.textLabel?.text = "チケットが一枚もありません"
             
         }else{
-            
+                
+        let cardContent: RecaiveCard = self.cardsList[(indexPath as NSIndexPath).row];
             //ここを画像にする
-        cell?.textLabel?.text = titleArray[indexPath.row]
+            cell?.textLabel?.text = cardContent.title
             
         }
         return cell!
     }
+    
+//    func read() -> RecaiveCard?{
+//        return realm.objects(RecaiveCard.self).first
+//    }
 
 
 }
