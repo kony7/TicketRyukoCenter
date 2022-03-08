@@ -21,6 +21,9 @@
 		EE95B10B27D7559D003478B3 /* RecaiveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B10A27D7559D003478B3 /* RecaiveCard.swift */; };
 		EE95B10E27D7560B003478B3 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = EE95B10D27D7560B003478B3 /* Realm */; };
 		EE95B11027D7560B003478B3 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EE95B10F27D7560B003478B3 /* RealmSwift */; };
+		EE95B11527D7B366003478B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE95B11427D7B366003478B3 /* GoogleService-Info.plist */; };
+		EE95B11627D7B366003478B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE95B11427D7B366003478B3 /* GoogleService-Info.plist */; };
+		EE95B11727D7B366003478B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE95B11427D7B366003478B3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,7 @@
 		EE95B10627D5E7E9003478B3 /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		EE95B10827D5E817003478B3 /* MakeTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTicketViewController.swift; sourceTree = "<group>"; };
 		EE95B10A27D7559D003478B3 /* RecaiveCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecaiveCard.swift; sourceTree = "<group>"; };
+		EE95B11427D7B366003478B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 				EE95B0DF27D4D54F003478B3 /* Assets.xcassets */,
 				EE95B0E127D4D54F003478B3 /* LaunchScreen.storyboard */,
 				EE95B0E427D4D54F003478B3 /* Info.plist */,
+				EE95B11427D7B366003478B3 /* GoogleService-Info.plist */,
 			);
 			path = TicketRyukoCenter;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 			mainGroup = EE95B0CA27D4D54D003478B3;
 			packageReferences = (
 				EE95B10C27D7560A003478B3 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				EE95B11127D7B0B7003478B3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = EE95B0D427D4D54D003478B3 /* Products */;
 			projectDirPath = "";
@@ -252,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE95B0E327D4D54F003478B3 /* LaunchScreen.storyboard in Resources */,
+				EE95B11527D7B366003478B3 /* GoogleService-Info.plist in Resources */,
 				EE95B0E027D4D54F003478B3 /* Assets.xcassets in Resources */,
 				EE95B0DE27D4D54D003478B3 /* Main.storyboard in Resources */,
 			);
@@ -261,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE95B11627D7B366003478B3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE95B11727D7B366003478B3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +641,14 @@
 		EE95B10C27D7560A003478B3 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		EE95B11127D7B0B7003478B3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				branch = master;
 				kind = branch;

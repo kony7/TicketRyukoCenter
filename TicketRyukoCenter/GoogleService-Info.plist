@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>787577218203-417sog2u4c9t2h47jk7bkac0jtt5jvgu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.787577218203-417sog2u4c9t2h47jk7bkac0jtt5jvgu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDY4x01o5gfLG8R9H28gLYg6Kl7YxKMPtY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>787577218203</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Kony.TicketRyukoCenter</string>
+	<key>PROJECT_ID</key>
+	<string>ticketryukocenter</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ticketryukocenter.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:787577218203:ios:e6d4793e52eb67bbbfd23e</string>
+</dict>
+</plist>

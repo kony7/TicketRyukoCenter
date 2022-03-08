@@ -181,7 +181,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hrN-IH-XFa">
-                                <rect key="frame" x="30" y="528.5" width="354" height="35"/>
+                                <rect key="frame" x="30" y="529" width="354" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="scO-5n-rI4"/>
                                 </constraints>
