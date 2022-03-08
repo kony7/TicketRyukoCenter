@@ -26,9 +26,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if titleArray.count == 0{
+            
             return 1
+            
         }else{
+            
         return titleArray.count
+            
         }
     }
     
