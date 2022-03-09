@@ -75,11 +75,25 @@ class MakeTicketViewController: UIViewController {
      }
     
     @IBAction func sendDataToFirebase(){
-        firestore.collection("cards").document("cardInfo").setData(["cardTitle": titleTextField.text!])
-        firestore.collection("cards").document("cardInfo").setData(["cardSender": senderTextField.text!])
-        firestore.collection("cards").document("cardInfo").setData(["cardComent": comentTextField.text!])
-        firestore.collection("cards").document("cardInfo").setData(["cardLimit": limitDatePicker.date])
-        firestore.collection("cards").document("cardInfo").setData(["cardDesign": cardSelecte])
+        
+        let cardData = [
+            
+            "cardTitle": titleTextField.text!,
+            "cardSender": senderTextField.text!,
+            "cardComent": comentTextField.text!,
+            "cardLimit": limitDatePicker.date,
+            "cardDesign": cardSelecte,
+            
+        ] as [String : Any]
+        
+        firestore.collection("cards").addDocument(data: cardData) { err in
+            if let err = err {
+                print("送信できませんでした: \(err)")
+            }
+        }
+
+        
+       // firestore.collection("cards").document("cardInfo").setData(["cardTitle": titleTextField.text!])
     }
 
     
