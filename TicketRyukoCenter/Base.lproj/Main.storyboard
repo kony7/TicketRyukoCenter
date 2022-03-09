@@ -181,7 +181,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hrN-IH-XFa">
-                                <rect key="frame" x="30" y="529" width="354" height="35"/>
+                                <rect key="frame" x="30" y="528.5" width="354" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="scO-5n-rI4"/>
                                 </constraints>
@@ -216,6 +216,7 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="17"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="sendDataToFirebase" destination="rYA-CQ-3Ms" eventType="touchUpInside" id="uKr-1n-ZrT"/>
                                     <segue destination="c90-vm-pjK" kind="show" identifier="toSendViewController" id="ttR-D3-taI"/>
                                 </connections>
                             </button>
