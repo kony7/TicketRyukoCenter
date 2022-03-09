@@ -10,7 +10,7 @@ import Firebase
 
 class MakeTicketViewController: UIViewController {
     
-    let firestore = Firestore.firestore()
+    let firestore = Firebase.Firestore.firestore()
     
     @IBOutlet var designCard1: UIButton!
     @IBOutlet var designCard2: UIButton!
