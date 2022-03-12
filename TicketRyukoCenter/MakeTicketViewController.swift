@@ -25,9 +25,12 @@ class MakeTicketViewController: UIViewController {
     
     var cardSelecte:Int = 0
     
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         titleTextField.setUnderLine()
         senderTextField.setUnderLine()
@@ -91,7 +94,7 @@ class MakeTicketViewController: UIViewController {
                 print("送信できませんでした: \(err)")
             }
         }
-
+        
         
        // firestore.collection("cards").document("cardInfo").setData(["cardTitle": titleTextField.text!])
     }

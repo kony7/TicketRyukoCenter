@@ -7,8 +7,11 @@
 
 import UIKit
 import RealmSwift
+import Firebase
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    let firestore = Firebase.Firestore.firestore()
     
     let realm = try! Realm()
 
@@ -33,6 +36,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         table.delegate = self
         
        // let recaiveCard: RecaiveCard? = read()
+        
+
         
         self.cardsList = realm.objects(RecaiveCard.self)
     
