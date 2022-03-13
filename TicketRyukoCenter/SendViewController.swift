@@ -28,7 +28,7 @@ class SendViewController: UIViewController {
     var comentText:String = ""
     var limitDate:Date = Date()
     var design:Int = 0
-    var cardid:String = ""
+    var cardidArray:[String] = [""]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,13 +36,14 @@ class SendViewController: UIViewController {
         firestore.getDocuments { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 for document in querySnapshot.documents {
-                    self.cardid = document.documentID
+                    self.cardidArray.append(document.documentID)
+                    print("これはカードidです→" + self.cardidArray.last!)
                     // Do something.
                 }
             }
         }
 
-        idTextField.text = cardid
+        idTextField.text = cardidArray.last!
         
         switch design{
         case 1:
