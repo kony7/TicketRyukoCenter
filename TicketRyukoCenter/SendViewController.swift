@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Firebase
 
 class SendViewController: UIViewController {
+    
+    let firestore = Firebase.Firestore.firestore().collection("cards")
     
     @IBOutlet var titleLabel:UILabel!
     @IBOutlet var senderLabel:UILabel!
@@ -25,9 +28,21 @@ class SendViewController: UIViewController {
     var comentText:String = ""
     var limitDate:Date = Date()
     var design:Int = 0
+    var cardid:String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        firestore.getDocuments { (querySnapshot, error) in
+            if let querySnapshot = querySnapshot {
+                for document in querySnapshot.documents {
+                    self.cardid = document.documentID
+                    // Do something.
+                }
+            }
+        }
+
+        idTextField.text = cardid
         
         switch design{
         case 1:

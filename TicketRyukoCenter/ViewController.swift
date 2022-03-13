@@ -11,7 +11,7 @@ import Firebase
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let firestore = Firebase.Firestore.firestore()
+    let firestore = Firebase.Firestore.firestore().collection("cards")
     
     let realm = try! Realm()
 
