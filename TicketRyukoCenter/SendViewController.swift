@@ -38,17 +38,17 @@ class SendViewController: UIViewController {
         // Create a query against the collection.
       //  let query = firestore.whereField(document.documentID, isEqualTo: titleText)
         
-        firestore.getDocuments { (querySnapshot, error) in
-            if let querySnapshot = querySnapshot {
-                for document in querySnapshot.documents {
-                    self.cardidArray.append(document.documentID)
-                    print("これはカードidです→" + self.cardidArray.last!)
-                    // Do something.
-                }
-            }
-        }
+//        firestore.getDocuments { (querySnapshot, error) in
+//            if let querySnapshot = querySnapshot {
+//                for document in querySnapshot.documents {
+//                    self.cardidArray.append(document.documentID)
+//                    print("これはカードidです→" + self.cardidArray.last!)
+//                    // Do something.
+//                }
+//            }
+//        }
 
-        idTextField.text = cardidArray.last!
+        idTextField.text = cardID
         
         switch design{
         case 1:
