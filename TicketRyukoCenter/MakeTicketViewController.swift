@@ -65,10 +65,7 @@ class MakeTicketViewController: UIViewController {
         
         print("こちらが早く呼び出されているとprepare")
         
-        titleText = self.titleTextField.text!
-        senderText = self.senderTextField.text!
-        comentText = self.comentTextField.text!
-        limitDateValue = self.limitDatePicker.date
+        textFieldToValue()
 
          // segueのIDを確認して特定のsegueのときのみ動作させる
          if segue.identifier == "toSendViewController" {
@@ -100,12 +97,14 @@ class MakeTicketViewController: UIViewController {
     
     func sendDataToFirebase(){
         
+        textFieldToValue()
+        
         let cardData = [
             
-            "cardTitle": titleTextField.text!,
-            "cardSender": senderTextField.text!,
-            "cardComent": comentTextField.text!,
-            "cardLimit": limitDatePicker.date,
+            "cardTitle": titleText,
+            "cardSender": senderText,
+            "cardComent": comentText,
+            "cardLimit": limitDateValue,
             "cardDesign": cardSelecte,
             
         ] as [String : Any]
@@ -123,24 +122,52 @@ class MakeTicketViewController: UIViewController {
     
     func saveCardDatatoRealm(){
         
+        textFieldToValue()
+        
         let cardSave: RecaiveCard? = read()
+        
+        if cardSave != nil{
+                  try! realm.write{
+                      cardSave!.title = titleText
+                      cardSave!.sender = senderText
+                      cardSave!.limit = limitDateValue
+                      cardSave!.coment = comentText
+                      cardSave!.design = cardSelecte
+                  }
+                  }else{
+                      let newCard = RecaiveCard()
+                      newCard.title = titleText
+                      newCard.sender = senderText
+                      newCard.limit = limitDateValue
+                      newCard.coment = comentText
+                      newCard.design = cardSelecte
+                      
+                      try! realm.write{
+                          realm.add(newCard)
+                  }
+              }
     
-        try! realm.write{
-            
-            cardSave!.title = titleTextField.text!
-            cardSave!.sender = senderTextField.text!
-            cardSave!.limit = limitDatePicker.date
-            cardSave!.coment = comentTextField.text!
-            cardSave!.design = cardSelecte
-            
-        }
+//        try! realm.write{
+//
+//            cardSave!.title = titleText
+//            cardSave!.sender = senderText
+//            cardSave!.limit = limitDateValue
+//            cardSave!.coment = comentText
+//            cardSave!.design = cardSelecte
+//
+//        }
     }
     
     func read() -> RecaiveCard?{
         return realm.objects(RecaiveCard.self).first
     }
     
-
+    func textFieldToValue(){
+        titleText = self.titleTextField.text!
+        senderText = self.senderTextField.text!
+        comentText = self.comentTextField.text!
+        limitDateValue = self.limitDatePicker.date
+    }
     
 
     /*
