@@ -25,14 +25,12 @@ class MakeTicketViewController: UIViewController {
     
     @IBOutlet var limitDatePicker: UIDatePicker!
     
-    
-    
-    
+    var titleText: String = ""
+    var senderText: String = ""
+    var comentText: String = ""
+    var limitDateValue: Date = Date()
     var cardSelecte:Int = 0
     
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,16 +62,23 @@ class MakeTicketViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        print("こちらが早く呼び出されているとprepare")
+        
+        titleText = self.titleTextField.text!
+        senderText = self.senderTextField.text!
+        comentText = self.comentTextField.text!
+        limitDateValue = self.limitDatePicker.date
 
          // segueのIDを確認して特定のsegueのときのみ動作させる
          if segue.identifier == "toSendViewController" {
              // 2. 遷移先のViewControllerを取得
              let next = segue.destination as? SendViewController
              // 3. １で用意した遷移先の変数に値を渡す
-             next?.titleText = self.titleTextField.text!
-             next?.senderText = self.senderTextField.text!
-             next?.comentText = self.comentTextField.text!
-             next?.limitDate = self.limitDatePicker.date
+             next?.titleText = self.titleText
+             next?.senderText = self.senderText
+             next?.comentText = self.comentText
+             next?.limitDate = limitDateValue
              next?.design = self.cardSelecte
              
          }
@@ -85,6 +90,8 @@ class MakeTicketViewController: UIViewController {
      }
     
     @IBAction func tapToSaveAndSendData(){
+        
+        print("こちらが早く呼び出されているとIBAction")
         
         sendDataToFirebase()
         saveCardDatatoRealm()
@@ -102,8 +109,9 @@ class MakeTicketViewController: UIViewController {
             "cardDesign": cardSelecte,
             
         ] as [String : Any]
-        
-        firestore.collection("cards").addDocument(data: cardData) { err in
+
+        //firestore.collection("cards").addDocument(data: cardData)
+        firestore.collection("cards").document("ここにIDを入れる").setData(cardData){ err in
             if let err = err {
                 print("送信できませんでした: \(err)")
             }
