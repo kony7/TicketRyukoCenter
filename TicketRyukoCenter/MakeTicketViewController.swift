@@ -13,6 +13,8 @@ class MakeTicketViewController: UIViewController {
     
     let firestore = Firebase.Firestore.firestore()
     let realm = try! Realm()
+    let uuid = UUID()
+
     
     @IBOutlet var designCard1: UIButton!
     @IBOutlet var designCard2: UIButton!
@@ -30,6 +32,7 @@ class MakeTicketViewController: UIViewController {
     var comentText: String = ""
     var limitDateValue: Date = Date()
     var cardSelecte:Int = 0
+    var tickedtID: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +66,8 @@ class MakeTicketViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        tickedtID = uuid.uuidString
+        
         print("こちらが早く呼び出されているとprepare")
         
         textFieldToValue()
@@ -77,6 +82,7 @@ class MakeTicketViewController: UIViewController {
              next?.comentText = self.comentText
              next?.limitDate = limitDateValue
              next?.design = self.cardSelecte
+             next?.cardID = self.tickedtID
              
          }
      }
@@ -110,7 +116,7 @@ class MakeTicketViewController: UIViewController {
         ] as [String : Any]
 
         //firestore.collection("cards").addDocument(data: cardData)
-        firestore.collection("cards").document("ここにIDを入れる").setData(cardData){ err in
+        firestore.collection("cards").document(tickedtID).setData(cardData){ err in
             if let err = err {
                 print("送信できませんでした: \(err)")
             }
@@ -163,6 +169,7 @@ class MakeTicketViewController: UIViewController {
     }
     
     func textFieldToValue(){
+        
         titleText = self.titleTextField.text!
         senderText = self.senderTextField.text!
         comentText = self.comentTextField.text!

@@ -28,7 +28,8 @@ class SendViewController: UIViewController {
     var comentText:String = ""
     var limitDate:Date = Date()
     var design:Int = 0
-    var cardidArray:[String] = [""]
+ //   var cardidArray:[String] = [""]
+    var cardID:String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
