@@ -172,12 +172,12 @@ class MakeTicketViewController: UIViewController {
         
         if titleTextField.text == nil{
             
-            //アラートならす
+            getAlert(alertTitleText: "タイトルが入力されていません")
             return
             
         }else if senderTextField.text == nil{
             
-            //アラートならす
+            getAlert(alertTitleText: "送信者が入力されていません")
             return
             
         }else if comentTextField.text == nil{
@@ -196,6 +196,19 @@ class MakeTicketViewController: UIViewController {
         limitDateValue = self.limitDatePicker.date
             
         }
+    }
+    
+    func getAlert(alertTitleText:String){
+        
+        let alert = UIAlertController(title: alertTitleText, message: "必須の項目が入力されていません", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "戻る", style: .default) { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(ok)
+        //ここまで追加
+        present(alert, animated: true, completion: nil)
+        
     }
     
 
