@@ -31,8 +31,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+ 
+        let cardSave: RecaiveCard? = read()
         
-   
+        if let cardSave = cardSave {
+            titleArray.append(cardSave.title)
+        }
+        
+        
         table.dataSource = self
         table.delegate = self
         
@@ -43,6 +49,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.cardsList = realm.objects(RecaiveCard.self)
     
        // titleArray = []
+    }
+    
+    func read() -> RecaiveCard?{
+        return realm.objects(RecaiveCard.self).first
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
