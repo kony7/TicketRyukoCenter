@@ -200,12 +200,14 @@ class MakeTicketViewController: UIViewController {
     
     func getAlert(alertTitleText:String){
         
+        
         let alert = UIAlertController(title: alertTitleText, message: "必須の項目が入力されていません", preferredStyle: .alert)
         
-        let ok = UIAlertAction(title: "戻る", style: .default) { (action) in
+        let cancel = UIAlertAction(title: "キャンセル", style: .cancel) { (acrion) in
             self.dismiss(animated: true, completion: nil)
         }
-        alert.addAction(ok)
+        
+        alert.addAction(cancel)
         //ここまで追加
         present(alert, animated: true, completion: nil)
         
