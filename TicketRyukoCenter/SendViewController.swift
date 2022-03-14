@@ -35,7 +35,7 @@ class SendViewController: UIViewController {
 
 
         // Create a query against the collection.
-        let query = firestore.whereField(document.documentID, isEqualTo: titleText)
+      //  let query = firestore.whereField(document.documentID, isEqualTo: titleText)
         
         firestore.getDocuments { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {

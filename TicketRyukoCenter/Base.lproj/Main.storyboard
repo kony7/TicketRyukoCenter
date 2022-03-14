@@ -216,7 +216,7 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="17"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="sendDataToFirebase" destination="rYA-CQ-3Ms" eventType="touchUpInside" id="uKr-1n-ZrT"/>
+                                    <action selector="tapToSaveAndSendData" destination="rYA-CQ-3Ms" eventType="touchUpInside" id="ehn-FD-dHB"/>
                                     <segue destination="c90-vm-pjK" kind="show" identifier="toSendViewController" id="ttR-D3-taI"/>
                                 </connections>
                             </button>

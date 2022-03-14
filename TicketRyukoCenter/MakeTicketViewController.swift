@@ -7,10 +7,12 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 
 class MakeTicketViewController: UIViewController {
     
     let firestore = Firebase.Firestore.firestore()
+    let realm = try! Realm()
     
     @IBOutlet var designCard1: UIButton!
     @IBOutlet var designCard2: UIButton!
@@ -22,6 +24,9 @@ class MakeTicketViewController: UIViewController {
     @IBOutlet var comentTextField:UITextField!
     
     @IBOutlet var limitDatePicker: UIDatePicker!
+    
+    
+    
     
     var cardSelecte:Int = 0
     
@@ -36,9 +41,12 @@ class MakeTicketViewController: UIViewController {
         senderTextField.setUnderLine()
         comentTextField.setUnderLine()
         
+        
+        
         // Do any additional setup after loading the view.
     }
     
+
     @IBAction func pinkButton(){
         cardSelecte = 1
     }
@@ -73,11 +81,17 @@ class MakeTicketViewController: UIViewController {
 
      @IBAction func tapTransitionButton(_ sender: Any) {
          // 4. 画面遷移実行
-         
          performSegue(withIdentifier: "toSendViewController", sender: nil)
      }
     
-    @IBAction func sendDataToFirebase(){
+    @IBAction func tapToSaveAndSendData(){
+        
+        sendDataToFirebase()
+        saveCardDatatoRealm()
+        
+    }
+    
+    func sendDataToFirebase(){
         
         let cardData = [
             
@@ -98,6 +112,26 @@ class MakeTicketViewController: UIViewController {
         
        // firestore.collection("cards").document("cardInfo").setData(["cardTitle": titleTextField.text!])
     }
+    
+    func saveCardDatatoRealm(){
+        
+        let cardSave: RecaiveCard? = read()
+    
+        try! realm.write{
+            
+            cardSave!.title = titleTextField.text!
+            cardSave!.sender = senderTextField.text!
+            cardSave!.limit = limitDatePicker.date
+            cardSave!.coment = comentTextField.text!
+            cardSave!.design = cardSelecte
+            
+        }
+    }
+    
+    func read() -> RecaiveCard?{
+        return realm.objects(RecaiveCard.self).first
+    }
+    
 
     
 
