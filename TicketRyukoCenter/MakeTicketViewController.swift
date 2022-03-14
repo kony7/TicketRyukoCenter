@@ -170,10 +170,32 @@ class MakeTicketViewController: UIViewController {
     
     func textFieldToValue(){
         
+        if titleTextField.text == nil{
+            
+            //アラートならす
+            return
+            
+        }else if senderTextField.text == nil{
+            
+            //アラートならす
+            return
+            
+        }else if comentTextField.text == nil{
+            
+            comentText = ""
+            titleText = self.titleTextField.text!
+            senderText = self.senderTextField.text!
+            comentText = self.comentTextField.text!
+            limitDateValue = self.limitDatePicker.date
+            
+        }else{
+        
         titleText = self.titleTextField.text!
         senderText = self.senderTextField.text!
         comentText = self.comentTextField.text!
         limitDateValue = self.limitDatePicker.date
+            
+        }
     }
     
 
