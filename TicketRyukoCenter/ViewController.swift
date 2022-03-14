@@ -36,6 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if let cardSave = cardSave {
             titleArray.append(cardSave.title)
+            print("追加されてるはずのタイトルはこちら" + cardSave.title)
         }
         
         
