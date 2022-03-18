@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import RealmSwift
 
-class MakeTicketViewController: UIViewController {
+class MakeTicketViewController: UIViewController, UITextFieldDelegate {
     
     let firestore = Firebase.Firestore.firestore()
     let realm = try! Realm()
@@ -41,6 +41,10 @@ class MakeTicketViewController: UIViewController {
         titleTextField.setUnderLine()
         senderTextField.setUnderLine()
         comentTextField.setUnderLine()
+        
+        titleTextField.delegate = self
+        senderTextField.delegate = self
+        comentTextField.delegate = self
         
         
         
@@ -211,6 +215,11 @@ class MakeTicketViewController: UIViewController {
         //ここまで追加
         present(alert, animated: true, completion: nil)
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 

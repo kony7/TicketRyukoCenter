@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class SendViewController: UIViewController {
+class SendViewController: UIViewController, UITextFieldDelegate {
     
     let firestore = Firebase.Firestore.firestore().collection("cards")
     
@@ -33,7 +33,9 @@ class SendViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        idTextField.delegate = self
 
         // Create a query against the collection.
       //  let query = firestore.whereField(document.documentID, isEqualTo: titleText)
@@ -70,6 +72,11 @@ class SendViewController: UIViewController {
        // limitdayLabel.text = String(limitDate)
         
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 

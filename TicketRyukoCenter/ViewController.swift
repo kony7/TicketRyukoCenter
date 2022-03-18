@@ -32,29 +32,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view.
  
-        let cardSave: RecaiveCard? = read()
         
-        if let cardSave = cardSave {
-            titleArray.append(cardSave.title)
-            print("追加されてるはずのタイトルはこちら" + cardSave.title)
-        }
+     //   let cardSave: RecaiveCard? = read()
         
+//        if let cardSave = cardSave {
+//            titleArray.append(cardSave.title)
+//            print("追加されてるはずのタイトルはこちら" + cardSave.title)
+//        }
+        
+        titleArray = realm.objects(RecaiveCard.self).value(forKey: "title") as! [String]
         
         table.dataSource = self
         table.delegate = self
         
-       // let recaiveCard: RecaiveCard? = read()
-        
-
         
         self.cardsList = realm.objects(RecaiveCard.self)
     
-       // titleArray = []
     }
     
-    func read() -> RecaiveCard?{
-        return realm.objects(RecaiveCard.self).first
-    }
+//    func read() -> RecaiveCard?{
+//        return realm.objects(RecaiveCard.self).first
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
