@@ -40,7 +40,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //            print("追加されてるはずのタイトルはこちら" + cardSave.title)
 //        }
         
-        titleArray = realm.objects(RecaiveCard.self).value(forKey: "title") as! [String]
+        let contentTitle = realm.objects(RecaiveCard.self).value(forKey: "title")
+        print(contentTitle as! String + "がタイトル")
+        titleArray.append(contentTitle as! String)
         
         table.dataSource = self
         table.delegate = self
