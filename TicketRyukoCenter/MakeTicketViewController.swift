@@ -137,25 +137,35 @@ class MakeTicketViewController: UIViewController, UITextFieldDelegate {
         let cardSave: RecaiveCard? = read()
         
         if cardSave != nil{
+            
                   try! realm.write{
                       cardSave!.title = titleText
                       cardSave!.sender = senderText
                       cardSave!.limit = limitDateValue
                       cardSave!.coment = comentText
                       cardSave!.design = cardSelecte
+                  
                   }
-                  }else{
-                      let newCard = RecaiveCard()
-                      newCard.title = titleText
-                      newCard.sender = senderText
-                      newCard.limit = limitDateValue
-                      newCard.coment = comentText
-                      newCard.design = cardSelecte
+            
+            print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true))
+            
+        }else{
+                    
+            let newCard = RecaiveCard()
+            
+            newCard.title = titleText
+            newCard.sender = senderText
+            newCard.limit = limitDateValue
+            newCard.coment = comentText
+            newCard.design = cardSelecte
                       
-                      try! realm.write{
-                          realm.add(newCard)
-                  }
-              }
+            try! realm.write{
+                          
+                realm.add(newCard)
+                print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true))
+                  
+            }
+        }
     
 //        try! realm.write{
 //
