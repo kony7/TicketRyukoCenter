@@ -18,3 +18,4 @@ class RecaiveCard: Object{
     @objc dynamic var design: Int = 0
     
 }
+

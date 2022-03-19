@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let firestore = Firebase.Firestore.firestore().collection("cards")
     
     let realm = try! Realm()
+    
 
     @IBOutlet var table: UITableView!
     
@@ -27,22 +28,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var cardsList: Results<RecaiveCard>!
     
     var titleArray = [String]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
  
-        
-     //   let cardSave: RecaiveCard? = read()
-        
-//        if let cardSave = cardSave {
-//            titleArray.append(cardSave.title)
-//            print("追加されてるはずのタイトルはこちら" + cardSave.title)
-//        }
-        
-        let contentTitle = realm.objects(RecaiveCard.self).value(forKey: "title")
-        print(contentTitle as! String + "がタイトル")
-        titleArray.append(contentTitle as! String)
+        cardsList = realm.objects(RecaiveCard.self)
         
         table.dataSource = self
         table.delegate = self
