@@ -10,48 +10,40 @@ import Firebase
 
 class SendViewController: UIViewController, UITextFieldDelegate {
     
+    //firestoreのインスタンス化
     let firestore = Firebase.Firestore.firestore().collection("cards")
     
+    //カード内容を表示させるラベルとイメージビューの宣言
     @IBOutlet var titleLabel:UILabel!
     @IBOutlet var senderLabel:UILabel!
     @IBOutlet var comentLabel:UILabel!
     @IBOutlet var limitdayLabel:UILabel!
-    
-    @IBOutlet var idTextField:UITextField!
-    
     @IBOutlet var cardImageView:UIImageView!
     
+    //発券番号を表示させるテキストフィールドの宣言
+    @IBOutlet var idTextField:UITextField!
+    
+    //共有のモーダルが出る贈るボタンの宣言
     @IBOutlet var sendButton:UIButton!
     
+    //前の画面から渡されてきた値を受け取る変数
     var titleText:String = ""
     var senderText:String = ""
     var comentText:String = ""
     var limitDate:Date = Date()
     var design:Int = 0
- //   var cardidArray:[String] = [""]
     var cardID:String = ""
 
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
         
         idTextField.delegate = self
-
-        // Create a query against the collection.
-      //  let query = firestore.whereField(document.documentID, isEqualTo: titleText)
-        
-//        firestore.getDocuments { (querySnapshot, error) in
-//            if let querySnapshot = querySnapshot {
-//                for document in querySnapshot.documents {
-//                    self.cardidArray.append(document.documentID)
-//                    print("これはカードidです→" + self.cardidArray.last!)
-//                    // Do something.
-//                }
-//            }
-//        }
-
         idTextField.text = cardID
         
+        //前の画面から渡されてきたカードデザイン変数によって表示させる画像を変える
         switch design{
         case 1:
             cardImageView.image = UIImage(named: "TicketCardPink")
@@ -63,17 +55,20 @@ class SendViewController: UIViewController, UITextFieldDelegate {
             cardImageView.image = UIImage(named: "TicketCardBlue")
         default:
             return
-            
         }
         
+        //前の画面から渡されてきた値をラベルに表示させる
         titleLabel.text = titleText
         senderLabel.text = senderText
         comentLabel.text = comentText
-       // limitdayLabel.text = String(limitDate)
         
-        // Do any additional setup after loading the view.
+        //期日を表示させようとするとString型への変換がうまくいかないのでそこを調べる
+        //limitdayLabel.text = String(limitDate)
+        
+        
     }
     
+    //テキストフィールドに入力中、キーボードでReturnボタンが押されるとキーボードが終われるメソッド
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

@@ -8,6 +8,7 @@
 import Foundation
 import RealmSwift
 
+//Realmに保存する時のクラス
 class RecaiveCard: Object{
     
     @objc dynamic var title: String = ""
