@@ -43,6 +43,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Realmのfunctionでデータを取得。functionを更に追加することで、フィルターもかけられる(サイトから引用)
         //たぶんRealmのデータを全部代入してる
         self.cardsList = realm.objects(RecaiveCard.self)
+        
+        
     
     }
     
@@ -57,8 +59,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return 1
             
         }else{
-            
+            print(String(cardsList.count) + "がカードリストの数")
         return cardsList.count
+           
             
         }
     }
@@ -77,6 +80,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cardContent: RecaiveCard = self.cardsList[(indexPath as NSIndexPath).row];
             //ここを画像にする
             cell?.textLabel?.text = cardContent.title
+            
             
         }
         return cell!
