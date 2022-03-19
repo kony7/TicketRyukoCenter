@@ -1,0 +1,6 @@
+framework module Pods_TicketRyukoCenter {
+  umbrella header "Pods-TicketRyukoCenter-umbrella.h"
+
+  export *
+  module * { export * }
+}

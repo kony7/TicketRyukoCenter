@@ -8,8 +8,19 @@
 import UIKit
 import RealmSwift
 import Firebase
+import BLTNBoard
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    //ハーフモーダルの記載
+    var boardManager: BLTNItemManager = {
+        let item = BLTNPageItem(title: "送られてきた発券番号")
+        item.actionButtonTitle = "発券する"
+        item.alternativeButtonTitle = nil
+        item.image = nil
+        makeTextField()
+        return BLTNItemManager(rootItem: item)
+    }()
     
     //firestoreとrealmのインスタンス化
     let firestore = Firebase.Firestore.firestore().collection("cards")
@@ -95,4 +106,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
 }
+
+//ハーフモーダルにテキストフィールドを表示させる
+@objc
+open func makeTextField(placeholder: String? = nil,
+                        returnKey: UIReturnKeyType = .default,
+                        delegate: UITextFieldDelegate? = nil) -> UITextField
+
 
