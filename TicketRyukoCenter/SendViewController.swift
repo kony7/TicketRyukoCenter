@@ -30,10 +30,15 @@ class SendViewController: UIViewController, UITextFieldDelegate {
     var titleText:String = ""
     var senderText:String = ""
     var comentText:String = ""
-    var limitDate:Date = Date()
     var design:Int = 0
     var cardID:String = ""
+    var limitDate:Date = Date()
+    
+    // Date ⇔ Stringの相互変換をする
+    let dateFormatter = DateFormatter()
 
+    
+   
     
     override func viewDidLoad() {
         
@@ -62,8 +67,21 @@ class SendViewController: UIViewController, UITextFieldDelegate {
         senderLabel.text = senderText
         comentLabel.text = comentText
         
-        //期日を表示させようとするとString型への変換がうまくいかないのでそこを調べる
-        //limitdayLabel.text = String(limitDate)
+        
+        // フォーマット設定
+        dateFormatter.dateFormat = "yyyy'年'M'月'd'日('EEEEE') 'H'時'm'分's'秒'" // 曜日1文字
+        //dateFormatter.dateFormat = "M'月'd'日 ('EEEE')'" // 曜日3文字
+
+        // ロケール設定（日本語・日本国固定）
+        dateFormatter.locale = Locale(identifier: "ja_JP")
+
+        // タイムゾーン設定（日本標準時固定）
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
+
+        // 変換
+        let stringLimitDate = dateFormatter.string(from: limitDate)
+        
+        limitdayLabel.text = stringLimitDate
         
         
     }
