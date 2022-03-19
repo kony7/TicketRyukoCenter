@@ -11,35 +11,37 @@ import Firebase
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //firestoreとrealmのインスタンス化
     let firestore = Firebase.Firestore.firestore().collection("cards")
-    
     let realm = try! Realm()
     
-
+    //常時Realmデータを入れれるようなcardListという変数を宣言
+    var cardsList: Results<RecaiveCard>!
+    
+    //tableviewの宣言
     @IBOutlet var table: UITableView!
     
+    //cellに表示させるテキストの宣言
     @IBOutlet var titleCellText: UILabel!
     @IBOutlet var senderCellText: UILabel!
     @IBOutlet var limitCellText: UILabel!
     @IBOutlet var comentCellText: UILabel!
     
+    //デザインの変数
     var cardDesign: Int = 0
     
-    var cardsList: Results<RecaiveCard>!
-    
-    var titleArray = [String]()
     
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
- 
-        cardsList = realm.objects(RecaiveCard.self)
         
         table.dataSource = self
         table.delegate = self
         
-        
+        // Realmのfunctionでデータを取得。functionを更に追加することで、フィルターもかけられる(サイトから引用)
+        //たぶんRealmのデータを全部代入してる
         self.cardsList = realm.objects(RecaiveCard.self)
     
     }
@@ -65,7 +67,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         
-        if titleArray.count == 0{
+        if cardsList.count == 0{
             
             //ここを画像にする
             cell?.textLabel?.text = "チケットが一枚もありません"
