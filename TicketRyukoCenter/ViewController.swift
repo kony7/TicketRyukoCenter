@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //常時Realmデータを入れれるようなcardListという変数を宣言
     var cardsList: Results<RecaiveCard>!
     
+    
     //tableviewの宣言
     @IBOutlet var table: UITableView!
     
@@ -37,12 +38,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        
         table.dataSource = self
         table.delegate = self
         
         // Realmのfunctionでデータを取得。functionを更に追加することで、フィルターもかけられる(サイトから引用)
         //たぶんRealmのデータを全部代入してる
         self.cardsList = realm.objects(RecaiveCard.self)
+        print(String(cardsList.count) + "がviewDidLoad終了後のカードリストの数")
         
         
     
@@ -59,7 +62,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return 1
             
         }else{
-            print(String(cardsList.count) + "がカードリストの数")
+        print(String(cardsList.count) + "がtableView読み込む時のカードリストの数")
         return cardsList.count
            
             
