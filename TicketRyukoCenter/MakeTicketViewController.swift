@@ -154,6 +154,7 @@ class MakeTicketViewController: UIViewController, UITextFieldDelegate {
         newCard.limit = limitDateValue
         newCard.coment = comentText
         newCard.design = cardSelecte
+        newCard.toOther = true
                       
         //代入した値をRealmに追加
         try! realm.write{

@@ -53,7 +53,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // Realmのfunctionでデータを取得。functionを更に追加することで、フィルターもかけられる(サイトから引用)
         //たぶんRealmのデータを全部代入してる
-        self.cardsList = realm.objects(RecaiveCard.self)
+        self.cardsList = realm.objects(RecaiveCard.self).filter("toOther == false")
         print(String(cardsList.count) + "がviewDidLoad終了後のカードリストの数")
         
         print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true))

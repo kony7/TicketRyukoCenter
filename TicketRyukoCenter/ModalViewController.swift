@@ -11,7 +11,7 @@ import Firebase
 import RealmSwift
 
 /// UISheetPresentationController に載せたい ViewController
-final class ModalViewController: UIViewController {
+final class ModalViewController: UIViewController, UITextFieldDelegate {
     
     //firebaseとrealmのインスタンス化
     let firestore = Firebase.Firestore.firestore()
@@ -31,8 +31,14 @@ final class ModalViewController: UIViewController {
     var cardSelecte:Int = 0
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         view.backgroundColor = .white
+        
+        //テキストフィールドを下線だけのデザインに変更
+        idTextField.setUnderLine()
+        
+        idTextField.delegate = self
     }
     
     //発券ボタンを押した時の関数
@@ -71,6 +77,21 @@ final class ModalViewController: UIViewController {
         }
         
         //一時的に保存されたチケットの内容をRealmに保存
+        //Realmのクラスの型で新しい定数を宣言し、それぞれに入力した値を代入
+        let newCard = RecaiveCard()
+        newCard.title = titleText
+        newCard.sender = senderText
+        newCard.limit = limitDateValue
+        newCard.coment = comentText
+        newCard.design = cardSelecte
+        newCard.toOther = false
+                      
+        //代入した値をRealmに追加
+        try! realm.write{
+              
+            realm.add(newCard)
+                  
+            }
         
     }
     
@@ -88,6 +109,14 @@ final class ModalViewController: UIViewController {
         //アラートを上記で設定した内容で出す
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
+        
+    }
+    
+    //テキストフィールドに入力中、キーボードでReturnボタンが押されるとキーボードが終われるメソッド
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
         
     }
 }

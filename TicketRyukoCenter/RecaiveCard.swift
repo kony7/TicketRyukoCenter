@@ -17,6 +17,7 @@ class RecaiveCard: Object{
     @objc dynamic var coment: String = ""
     @objc dynamic var id: Int = 0
     @objc dynamic var design: Int = 0
+    @objc dynamic var toOther: Bool = true
     
 }
 
