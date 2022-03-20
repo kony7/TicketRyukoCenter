@@ -18,18 +18,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //常時Realmデータを入れれるようなcardListという変数を宣言
     var cardsList: Results<RecaiveCard>!
     
+    //セルの情報を入れておく定数
+    let cellIdentifier = "TableViewCell"
     
     //tableviewの宣言
     @IBOutlet var table: UITableView!
     
-    //cellに表示させるテキストの宣言
-    @IBOutlet var titleCellText: UILabel!
-    @IBOutlet var senderCellText: UILabel!
-    @IBOutlet var limitCellText: UILabel!
-    @IBOutlet var comentCellText: UILabel!
-    
     //デザインの変数
     var cardDesign: Int = 0
+    
+    // Date ⇔ Stringの相互変換をする
+    let dateFormatter = DateFormatter()
     
     //ハーフモーダル
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,9 +45,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
+        //MainTableViewCellを登録してるイメージ
+        table.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         table.dataSource = self
         table.delegate = self
+        
+       
         
         // Realmのfunctionでデータを取得。functionを更に追加することで、フィルターもかけられる(サイトから引用)
         //たぶんRealmのデータを全部代入してる
@@ -78,27 +80,55 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //テーブルビューの内容を指定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //テーブルビューのセルを宣言
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        //テーブルビューのセルをカスタムセルに設定、内容はカスタムセルの設定で行う
+        let cell = table.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TableViewCell
         
         //もしRealm内にデータがなければチケットがないことを表示
         if cardsList.count == 0{
-            
+    
             //画像も追加
-            cell?.textLabel?.text = "チケットが一枚もありません"
-            
+            cell.titleCellText.text = "チケットが一枚もありません"
+    
         }else{
-                
-        //もしRealm内にデータがあればタイトルを表示する
-        let cardContent: RecaiveCard = self.cardsList[(indexPath as NSIndexPath).row];
             
-            //画像、送信者、コメント、期限も追加
-            cell?.textLabel?.text = cardContent.title
+            //もしRealm内にデータがあればタイトルを表示する
+            let cardContent: RecaiveCard = self.cardsList[(indexPath as NSIndexPath).row];
+            
+            // フォーマット設定
+            dateFormatter.dateFormat = "yyyy'年'M'月'd'日('EEEEE') 'H'時'm'分's'秒'" // 曜日1文字
+            //dateFormatter.dateFormat = "M'月'd'日 ('EEEE')'" // 曜日3文字
+
+            // ロケール設定（日本語・日本国固定）
+            dateFormatter.locale = Locale(identifier: "ja_JP")
+
+            // タイムゾーン設定（日本標準時固定）
+            dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
+
+            // 変換
+            let stringLimitDate = dateFormatter.string(from: cardContent.limit)
+            
+            cell.titleCellText.text = cardContent.title
+            cell.senderCellText.text = cardContent.sender
+            cell.comentCellText.text = cardContent.coment
+            cell.limitCellText.text = stringLimitDate
+            
+            switch cardContent.design{
+            case 1:
+                cell.cardDesignView.image = UIImage(named: "TicketCardPink")
+            case 2:
+                cell.cardDesignView.image = UIImage(named: "TicketCardOrange")
+            case 3:
+                cell.cardDesignView.image = UIImage(named: "TicketCardGreen")
+            case 4:
+                cell.cardDesignView.image = UIImage(named: "TicketCardBlue")
+            default:
+                cell.cardDesignView.image = UIImage(named: "TicketCardPink")
+            }
             
             
         }
         
-        return cell!
+        return cell
         
     }
 
