@@ -56,7 +56,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.cardsList = realm.objects(RecaiveCard.self)
         print(String(cardsList.count) + "がviewDidLoad終了後のカードリストの数")
         
-        
+        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true))
     
     }
     
