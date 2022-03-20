@@ -439,10 +439,10 @@
             </objects>
             <point key="canvasLocation" x="1830.4347826086957" y="768.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Modal View Controller-->
         <scene sceneID="Y7S-wr-9fa">
             <objects>
-                <viewController id="DVh-cX-Zdi" sceneMemberID="viewController">
+                <viewController id="DVh-cX-Zdi" customClass="ModalViewController" customModule="TicketRyukoCenter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AaS-5v-Q0S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -470,6 +470,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="発券">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="getTicketButton" destination="DVh-cX-Zdi" eventType="touchUpInside" id="kny-kL-dZt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vMz-7k-Isc"/>
@@ -485,6 +488,9 @@
                             <constraint firstItem="dym-j2-UMn" firstAttribute="centerX" secondItem="AaS-5v-Q0S" secondAttribute="centerX" id="vPF-Hc-CKJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="idTextField" destination="dym-j2-UMn" id="9jf-DB-x6z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQo-Hh-kmS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
