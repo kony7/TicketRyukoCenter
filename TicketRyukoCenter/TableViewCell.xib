@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="送信者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="57S-Vj-tVH">
-                        <rect key="frame" x="26" y="106" width="179" height="24"/>
+                        <rect key="frame" x="26" y="106" width="299" height="24"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
@@ -37,7 +37,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="期限" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TaQ-BC-Ejw">
-                        <rect key="frame" x="179" y="167" width="151" height="23"/>
+                        <rect key="frame" x="20" y="167" width="310" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
@@ -62,7 +62,7 @@
                 <outlet property="senderCellText" destination="57S-Vj-tVH" id="xkU-hg-bGo"/>
                 <outlet property="titleCellText" destination="E4s-0G-2EP" id="swf-de-Fqt"/>
             </connections>
-            <point key="canvasLocation" x="135" y="117"/>
+            <point key="canvasLocation" x="134.78260869565219" y="116.51785714285714"/>
         </tableViewCell>
     </objects>
     <resources>

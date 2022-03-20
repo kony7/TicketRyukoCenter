@@ -49,8 +49,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         table.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         table.dataSource = self
         table.delegate = self
-        
-       
+        table.separatorStyle = .none
         
         // Realmのfunctionでデータを取得。functionを更に追加することで、フィルターもかけられる(サイトから引用)
         //たぶんRealmのデータを全部代入してる
@@ -130,6 +129,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
         
+    }
+    
+    //テーブルビューのセルの高さの指定
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 260
     }
 
 }
