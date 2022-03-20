@@ -31,6 +31,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //デザインの変数
     var cardDesign: Int = 0
     
+    //ハーフモーダル
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let next = segue.destination
+        if let sheet = next.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+    }
+
     
 
     override func viewDidLoad() {
