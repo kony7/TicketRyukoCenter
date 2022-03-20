@@ -61,7 +61,12 @@ final class ModalViewController: UIViewController {
                 //ここを一時的に変数に保存する指示かけばよさそう
             for document in snapshot.documents{
                 
-                print("ドキュメントタイトル：\(document.get("title") as! String)")
+                self.titleText = document.get("cardTitle") as! String
+                self.senderText = document.get("cardSender") as! String
+                self.comentText = document.get("cardComent") as! String
+                self.limitDateValue = document.get("cardLimit") as! Date
+                self.cardSelecte = document.get("cardDesign") as! Int
+                print(self.titleText)
             }
         }
         
