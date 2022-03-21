@@ -10,6 +10,7 @@
 		EE824CDC27DFA3B300D97FFD /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE824CDB27DFA3B300D97FFD /* ModalViewController.swift */; };
 		EE862C1527E75340005DFD0A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE862C1327E7533F005DFD0A /* TableViewCell.swift */; };
 		EE862C1627E75340005DFD0A /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE862C1427E7533F005DFD0A /* TableViewCell.xib */; };
+		EE862C1827E84BC4005DFD0A /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE862C1727E84BC4005DFD0A /* ArchiveViewController.swift */; };
 		EE91796D27D7BBD80036525B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EE91796C27D7BBD80036525B /* FirebaseFirestore */; };
 		EE95B0D727D4D54D003478B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B0D627D4D54D003478B3 /* AppDelegate.swift */; };
 		EE95B0D927D4D54D003478B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95B0D827D4D54D003478B3 /* SceneDelegate.swift */; };
@@ -51,6 +52,7 @@
 		EE824CDB27DFA3B300D97FFD /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		EE862C1327E7533F005DFD0A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		EE862C1427E7533F005DFD0A /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		EE862C1727E84BC4005DFD0A /* ArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
 		EE95B0D327D4D54D003478B3 /* TicketRyukoCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicketRyukoCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE95B0D627D4D54D003478B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE95B0D827D4D54D003478B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				EE95B10627D5E7E9003478B3 /* SendViewController.swift */,
 				EE95B10A27D7559D003478B3 /* RecaiveCard.swift */,
 				EE824CDB27DFA3B300D97FFD /* ModalViewController.swift */,
+				EE862C1727E84BC4005DFD0A /* ArchiveViewController.swift */,
 				EE862C1327E7533F005DFD0A /* TableViewCell.swift */,
 				EE862C1427E7533F005DFD0A /* TableViewCell.xib */,
 				EE95B0DC27D4D54D003478B3 /* Main.storyboard */,
@@ -301,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE95B10727D5E7E9003478B3 /* SendViewController.swift in Sources */,
+				EE862C1827E84BC4005DFD0A /* ArchiveViewController.swift in Sources */,
 				EE862C1527E75340005DFD0A /* TableViewCell.swift in Sources */,
 				EE95B0DB27D4D54D003478B3 /* ViewController.swift in Sources */,
 				EE95B0D727D4D54D003478B3 /* AppDelegate.swift in Sources */,

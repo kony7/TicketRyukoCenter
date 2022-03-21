@@ -69,7 +69,7 @@ class SendViewController: UIViewController, UITextFieldDelegate {
         
         
         // フォーマット設定
-        dateFormatter.dateFormat = "yyyy'年'M'月'd'日('EEEEE') 'H'時'm'分's'秒'" // 曜日1文字
+        dateFormatter.dateFormat = "yyyy'年'M'月'd'日('EEEEE') 'H'時'm'分'" // 曜日1文字
         //dateFormatter.dateFormat = "M'月'd'日 ('EEEE')'" // 曜日3文字
 
         // ロケール設定（日本語・日本国固定）

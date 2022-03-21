@@ -1,15 +1,15 @@
 //
-//  ViewController.swift
+//  ArchiveViewController.swift
 //  TicketRyukoCenter
 //
-//  Created by SeinaKonishi on 2022/03/06.
+//  Created by SeinaKonishi on 2022/03/21.
 //
 
 import UIKit
 import RealmSwift
 import Firebase
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ArchiveViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //firestoreとrealmのインスタンス化
     let firestore = Firebase.Firestore.firestore().collection("cards")
@@ -30,15 +30,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Date ⇔ Stringの相互変換をする
     let dateFormatter = DateFormatter()
     
-    //ハーフモーダル
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let next = segue.destination
-        if let sheet = next.sheetPresentationController {
-            sheet.detents = [.medium()]
-        }
-    }
-
-    
 
     override func viewDidLoad() {
         
@@ -53,11 +44,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // Realmのfunctionでデータを取得。functionを更に追加することで、フィルターもかけられる(サイトから引用)
         //たぶんRealmのデータを全部代入してる
-        self.cardsList = realm.objects(RecaiveCard.self).filter("toOther == false")
-        print(String(cardsList.count) + "がviewDidLoad終了後のカードリストの数")
+        self.cardsList = realm.objects(RecaiveCard.self).filter("toOther == true")
         
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true))
-    
     }
     
     //テーブルビューのセルの数を指定
@@ -134,6 +122,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 260
     }
+    
+    
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
-
